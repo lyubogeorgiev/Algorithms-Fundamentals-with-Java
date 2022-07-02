@@ -9,47 +9,25 @@ public class L02RecursiveDrawing {
 
         int n = Integer.parseInt(scanner.nextLine());
 
-        //non-recursive solution
-//        for (int i = n; i > 0 ; i--) {
-//            System.out.println("*".repeat(i));
-//        }
-//
-//        for (int i = 1; i <= n; i++) {
-//            char[] currentCharArr = new char[i];
-//            Arrays.fill(currentCharArr, '#');
-//
-//            System.out.println(String.valueOf(currentCharArr));
-//        }
-
-        //recursive method
-
-        generateFirst('*', n);
-        generateSecond('#', n, 1);
+        generateFirst('*', '#', n);
     }
 
-    public static String generateFirst(char symbol, int n){
+    public static void generateFirst(char symbol1, char symbol2, int n){
         if (n <= 0){
-            return "";
+            return ;
         }
 
         char[] charArr = new char[n];
-        Arrays.fill(charArr, symbol);
+        Arrays.fill(charArr, symbol1);
 
         System.out.println(String.valueOf(charArr));
 
-        return generateFirst(symbol, n - 1);
-    }
+        generateFirst(symbol1, symbol2, n - 1);
 
-    public static String generateSecond(char symbol, int n, int startIndex){
-        if (n <= 0){
-            return "";
-        }
-
-        char[] charArr = new char[startIndex];
-        Arrays.fill(charArr, symbol);
+        charArr = new char[n];
+        Arrays.fill(charArr, symbol2);
 
         System.out.println(String.valueOf(charArr));
-
-        return generateSecond(symbol, n - 1, startIndex + 1);
     }
+
 }
