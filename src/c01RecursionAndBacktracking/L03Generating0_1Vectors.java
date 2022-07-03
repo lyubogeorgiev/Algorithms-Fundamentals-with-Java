@@ -1,7 +1,6 @@
 package c01RecursionAndBacktracking;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class L03Generating0_1Vectors {
     public static void main(String[] args) {
@@ -29,8 +28,8 @@ public class L03Generating0_1Vectors {
     }
 
     public static void print(int[] memory){
-        for (int i = 0; i < memory.length; i++) {
-            System.out.print(memory[i]);
+        for (int j : memory) {
+            System.out.print(j);
         }
 
         System.out.println();
